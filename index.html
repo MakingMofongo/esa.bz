@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdul Rasheed Esa</title>
+<meta name="description" content="Abdul Rasheed Esa. Voice AI engineer, tech lead on FlowForge at Realbotics.">
+<meta name="color-scheme" content="light dark">
+<link rel="preload" href="fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Archivo;src:url(fonts/archivo-wdth.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:Literata;src:url(fonts/literata-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Literata;src:url(fonts/literata-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:Literata;src:url(fonts/literata-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{--bg:#fff;--ink:#16181d;--mute:#5f656e;--pen:#c8102e;--rule:#e3e5e8}
+@media (prefers-color-scheme:dark){:root{--bg:#111315;--ink:#e6e4df;--mute:#9a9fa6;--pen:#ff6a5c;--rule:#26292d}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Literata,Georgia,serif;font-variant-numeric:tabular-nums}
+main{max-width:640px;margin:0 auto;padding:22px 16px 48px}
+.status{font:500 13px/1.4 Archivo,system-ui,sans-serif;font-stretch:88%;color:var(--mute);display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:46px}
+.status b{color:var(--ink);font-weight:600}
+h1{font:700 40px/1.05 Archivo,system-ui,sans-serif;font-stretch:75%;margin:0 0 6px}
+.role{color:var(--mute);margin:0 0 36px}
+h2{font:600 14px Archivo,system-ui,sans-serif;font-stretch:90%;letter-spacing:.02em;margin:42px 0 4px}
+h2 small{font-weight:400;font-size:inherit;color:var(--mute);margin-left:6px}
+p{margin:0 0 14px}
+ul{list-style:none;padding:0;margin:8px 0 0}
+li{padding:9px 0;border-top:1px solid var(--rule)}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--pen);text-underline-offset:3px;text-decoration-thickness:1.5px}
+a:hover{text-decoration-thickness:3px}
+a:focus-visible{outline:2px solid var(--pen);outline-offset:2px;border-radius:2px}
+.audit{margin-top:36px}
+footer{margin-top:44px;padding-top:12px;border-top:1px solid var(--rule);font-size:15px;color:var(--mute)}
+footer a{color:var(--ink)}
+@media (max-width:480px){body{font-size:16px}main{padding-top:16px}.status{flex-direction:column;margin-bottom:30px}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<main>
+<p class="status"><span>Hyderabad <b id="t-hyd"></b> · Los Angeles <b id="t-la"></b> <span>(I work US hours)</span></span><span>last edited 28 Oct 2026</span></p>
+
+<h1>Abdul Rasheed Esa</h1>
+<p class="role">Voice AI engineer, Hyderabad.</p>
+
+<p>I'm interested in voice agents, latency, telephony and pretty much anything that has to happen in real time. Since February 2025 I've been the tech lead on FlowForge, the voice agent platform at Realbotics, on contract.</p>
+
+<h2>FlowForge <small>Feb 2025 to now</small></h2>
+<p>We built it from zero with a team of four, and I built basically all of <a href="https://app.realbotics.ai">app.realbotics.ai</a>. It does around 20k calls a day now, for LegalZoom, 1&#8209;800Accountant and a couple of others. We run our own LiveKit (server, 4 SIP nodes, egress, TURN) with Twilio and customer SIP trunks on the phone side.</p>
+<p>A lot of the work is figuring out where a call is losing time. Some of what I fixed:</p>
+<ul>
+<li>Handing a caller from one agent to another mid call used to take 5.5 seconds, with the caller on the line the whole time. It's 31ms now.</li>
+<li>A worker used to hold about 6 calls at once, now it's about 31. That took four bottlenecks, one after the other, and cold start p95 went from 4.6s to 1.7s on the way.</li>
+<li>Under campaign load SIP calls would go from 20% failing to 100% failing in 8 minutes. Found why and fixed it.</li>
+<li>Voicemail detection was treating 3.7% of real people as voicemail. Tuned it against 13k+ real calls and it's at 1%.</li>
+<li>Prompt cache hit rate went from 68% to 98%. On a phone call that matters, a miss is 2.1s to first token and a hit is 0.6s.</li>
+<li>We had issues with AWS, so I moved production to Hetzner and had it running there in under 24 hours. Deploys are blue/green and drain live calls before anything goes down.</li>
+<li>Load tested at 200 concurrent calls, 402 of 402 completed.</li>
+<li>Also a test bench for agents, with simulated callers that have personas, each tool mocked, and LLM judges.</li>
+</ul>
+
+<h2>Composer <small>inside FlowForge</small></h2>
+<p>The copilot in FlowForge that builds agents with you. I designed it. The first version in Feb 2026 was a PydanticAI agent with 21 tools that could change pretty much anything on an agent: settings, voice, tools, knowledge base, flows, test chat. Now it sees whatever page you're on, can drive the UI for you and asks before it does anything consequential. It has a skills system too (SKILL.md files loaded from the DB, same shape as Claude Code skills). Around 440 of my commits mention it.</p>
+
+<h2>On my own GPU <small>May 2026</small></h2>
+<p>A fully self-hosted voice agent on one RTX 6000 Ada on RunPod. Sesame CSM-1B fine-tuned with LoRA on a custom voice, next to a LiveKit worker. First audio went from 4.9s to about 315ms warm and live calls come in under 400ms end to end (my own measurement).</p>
+<p>Same month I moved the end-of-turn model onto the GPU in fp16 PyTorch. p50 is 23ms, it used to be 300 to 400ms.</p>
+
+<h2>Open source <small>Oct 2026</small></h2>
+<p>Four fixes in Mastra's realtime voice providers, each with tests, merged by their CTO.</p>
+<ul>
+<li><a href="https://github.com/mastra-ai/mastra/pull/26623">#26623</a> Nova Sonic: only the actual interrupted marker counts as a barge-in now</li>
+<li><a href="https://github.com/mastra-ai/mastra/pull/26624">#26624</a> OpenAI Realtime and Inworld always send tool output as a string</li>
+<li><a href="https://github.com/mastra-ai/mastra/pull/26697">#26697</a> OpenAI Realtime ends the speaker stream when a response has no audio</li>
+<li><a href="https://github.com/mastra-ai/mastra/pull/26698">#26698</a> Gemini Live cleans up speaker streams and session timers when the server closes</li>
+</ul>
+
+<h2>Before</h2>
+<ul>
+<li><b>2024</b> · KOKO AI, tech lead. Took a voice AI receptionist from zero to production, RAG over each business's own data, replies under 500ms (Twilio, Deepgram, ElevenLabs).</li>
+<li><b>2023</b> · ML contract at an insurtech. Got vehicle damage detection from 65% to 94% accuracy and shipped it as an API doing 100+ claims a day.</li>
+<li><b>2021–25</b> · B.E. in CS (AI &amp; ML), MJCET, Osmania University. ICPC Asia Regionals. Smart India Hackathon 2022 grand finalist, out of 15,000+ teams.</li>
+</ul>
+
+<p class="audit">If you've got a voice agent in production that's slower than it should be, email me, happy to look at it. <a href="mailto:rasheed@esa.bz">rasheed@esa.bz</a></p>
+
+<footer><a href="mailto:rasheed@esa.bz">rasheed@esa.bz</a> · <a href="https://github.com/MakingMofongo">GitHub</a> · <a href="https://www.linkedin.com/in/abdul-rasheed-esa-3a5635276/">LinkedIn</a> · <a href="Abdul_Rasheed_Esa_Resume.pdf">résumé (PDF)</a></footer>
+</main>
+<script>
+(function(){function f(z){return new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:z}).format(new Date())}
+function t(){document.getElementById('t-hyd').textContent=f('Asia/Kolkata');document.getElementById('t-la').textContent=f('America/Los_Angeles')}
+t();setInterval(t,30000)})();
+</script>
+</body>
+</html>
