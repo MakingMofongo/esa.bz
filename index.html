@@ -38,7 +38,7 @@ footer a{color:var(--ink)}
 </head>
 <body>
 <main>
-<p class="status"><span>Hyderabad <b id="t-hyd"></b> · Los Angeles <b id="t-la"></b> <span>(I work US hours)</span></span><span>last edited 28 Oct 2026</span></p>
+<p class="status"><span>Hyderabad <b id="t-hyd"></b> · Los Angeles <b id="t-la"></b> <span>(I work US hours)</span></span><span>last edited 31 Oct 2026</span></p>
 
 <h1>Abdul Rasheed Esa</h1>
 <p class="role">Voice AI engineer, Hyderabad.</p>
@@ -55,7 +55,7 @@ footer a{color:var(--ink)}
 <li>Voicemail detection was treating 3.7% of real people as voicemail. Tuned it against 13k+ real calls and it's at 1%.</li>
 <li>Prompt cache hit rate went from 68% to 98%. On a phone call that matters, a miss is 2.1s to first token and a hit is 0.6s.</li>
 <li>We had issues with AWS, so I moved production to Hetzner and had it running there in under 24 hours. Deploys are blue/green and drain live calls before anything goes down.</li>
-<li>Load tested at 200 concurrent calls, 402 of 402 completed.</li>
+<li>Load tests ran 1,000 calls with 100% completing, and 40 calls at once held up with autoscaling.</li>
 <li>Also a test bench for agents, with simulated callers that have personas, each tool mocked, and LLM judges.</li>
 </ul>
 
