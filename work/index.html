@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work · Abdul Rasheed Esa</title>
+<meta name="description" content="Abdul Rasheed Esa. Composer, a self-hosted voice agent on one GPU, and fixes merged into Mastra's realtime voice providers.">
+<meta name="color-scheme" content="light dark">
+<link rel="preload" href="../fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Archivo;src:url(../fonts/archivo-wdth.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:Literata;src:url(../fonts/literata-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Literata;src:url(../fonts/literata-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{--bg:#fff;--ink:#16181d;--mute:#5f656e;--pen:#c8102e;--rule:#e3e5e8}
+@media (prefers-color-scheme:dark){:root{--bg:#111315;--ink:#e6e4df;--mute:#9a9fa6;--pen:#ff6a5c;--rule:#26292d}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Literata,Georgia,serif;font-variant-numeric:tabular-nums}
+main{max-width:640px;margin:0 auto;padding:56px 16px 48px}
+.back{font:500 15px Archivo,system-ui,sans-serif;font-stretch:90%;margin:0 0 10px}
+h1{font:700 40px/1.05 Archivo,system-ui,sans-serif;font-stretch:75%;margin:0 0 8px}
+h2{font:600 14px Archivo,system-ui,sans-serif;font-stretch:90%;letter-spacing:.02em;margin:42px 0 4px;padding-top:14px;border-top:1px solid var(--rule)}
+h2 small{font-weight:400;font-size:inherit;color:var(--mute);margin-left:6px}
+p{margin:0 0 14px}
+ul{list-style:none;padding:0;margin:8px 0 0}
+li{padding:9px 0;border-top:1px solid var(--rule)}
+li:first-child{border-top:0}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--pen);text-underline-offset:3px;text-decoration-thickness:1.5px}
+a:hover{text-decoration-thickness:3px}
+a:focus-visible{outline:2px solid var(--pen);outline-offset:2px;border-radius:2px}
+footer{margin-top:44px;padding-top:12px;border-top:1px solid var(--rule);font-size:15px;color:var(--mute)}
+footer a{color:var(--ink)}
+@media (max-width:480px){body{font-size:16px}main{padding-top:36px}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<main>
+<p class="back"><a href="../">Abdul Rasheed Esa</a></p>
+<h1>Other work</h1>
+
+<h2>Composer <small>inside FlowForge</small></h2>
+<p>The copilot in FlowForge that builds agents with you. I designed it. The first version in Feb 2026 was a PydanticAI agent with 21 tools that could change pretty much anything on an agent: settings, voice, tools, knowledge base, flows, test chat. Now it sees whatever page you're on, can drive the UI for you and asks before it does anything consequential. It has a skills system too (SKILL.md files loaded from the DB, same shape as Claude Code skills).</p>
+
+<h2>On my own GPU <small>May 2026</small></h2>
+<p>A fully self-hosted voice agent on one RTX 6000 Ada on RunPod. Sesame CSM-1B fine-tuned with LoRA on a custom voice, next to a LiveKit worker. First audio went from 4.9s to about 315ms warm and live calls come in under 400ms end to end.</p>
+<p>Same month I moved the end-of-turn model onto the GPU in fp16 PyTorch. p50 is 23ms, it used to be 300 to 400ms.</p>
+
+<h2>Open source <small>Oct 2026</small></h2>
+<p>Four fixes in Mastra's realtime voice providers, each with tests, merged by their CTO.</p>
+<ul>
+<li><a href="https://github.com/mastra-ai/mastra/pull/26623">#26623</a> Nova Sonic: only the actual interrupted marker counts as a barge-in now</li>
+<li><a href="https://github.com/mastra-ai/mastra/pull/26624">#26624</a> OpenAI Realtime and Inworld always send tool output as a string</li>
+<li><a href="https://github.com/mastra-ai/mastra/pull/26697">#26697</a> OpenAI Realtime ends the speaker stream when a response has no audio</li>
+<li><a href="https://github.com/mastra-ai/mastra/pull/26698">#26698</a> Gemini Live cleans up speaker streams and session timers when the server closes</li>
+</ul>
+
+<footer><a href="mailto:rasheed@esa.bz">rasheed@esa.bz</a> · <a href="tel:+918639213518">+91&nbsp;86392&nbsp;13518</a> · <a href="https://github.com/MakingMofongo">GitHub</a> · <a href="https://www.linkedin.com/in/abdul-rasheed-esa-3a5635276/">LinkedIn</a> · <a href="../">Home</a></footer>
+</main>
+</body>
+</html>
