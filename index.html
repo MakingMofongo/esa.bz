@@ -53,7 +53,7 @@ footer a{color:var(--ink)}
 <li>A worker used to hold about 6 calls at once, now it's about 31. That took four bottlenecks, one after the other, and cold start p95 went from 4.6s to 1.7s on the way.</li>
 <li>Under campaign load SIP calls would go from 20% failing to 100% failing in 8 minutes. Found why and fixed it.</li>
 <li>Voicemail detection was treating 3.7% of real people as voicemail. Tuned it against 13k+ real calls and it's at 1%.</li>
-<li>Prompt cache hit rate went from 68% to 98%. On a phone call that matters, a miss is 2.1s to first token and a hit is 0.6s.</li>
+<li>Prompt cache hit rate went from 68% to 98%.</li>
 <li>Also a test bench for agents, with simulated callers that have personas, each tool mocked, and LLM judges.</li>
 </ul>
 
