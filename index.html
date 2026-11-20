@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abdul Rasheed Esa · Voice agents</title>
-<meta name="description" content="Abdul Rasheed Esa. Built FlowForge, a voice agent platform that handles about 20k calls a day.">
+<meta name="description" content="Abdul Rasheed Esa. I build phone agents that answer calls, book appointments and qualify leads. My platform, FlowForge, handles about 100k calls a day.">
 <meta name="color-scheme" content="light dark">
 <link rel="preload" href="fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -39,18 +39,17 @@ footer a{color:var(--ink)}
 <body>
 <main>
 <h1>Abdul Rasheed Esa</h1>
-<p class="lede">Built FlowForge, a voice agent platform that handles about 20k calls a day.</p>
-<p class="proof">Load-tested at 1,000 concurrent calls. Own LiveKit stack with 4 SIP nodes, on customer SIP trunks and Twilio. Hyderabad, working US hours.</p>
+<p class="lede">I build phone agents that answer calls, book appointments and qualify leads. The platform I built, FlowForge, handles about 100k calls a day for LegalZoom, 1&#8209;800Accountant and others.</p>
+<p class="proof">Talk to one in your browser: <a href="https://app.realbotics.ai/app/talk-to?token=3xkgdvuw9bm6">English</a> or <a href="https://app.realbotics.ai/app/talk-to?token=nqhunbbhzcoq">Hindi</a>. Hyderabad, working US hours.</p>
 
 <h2>Work with me</h2>
-<p>Talk to one of my agents in your browser: <a href="https://app.realbotics.ai/app/talk-to?token=3xkgdvuw9bm6">English</a> or <a href="https://app.realbotics.ai/app/talk-to?token=nqhunbbhzcoq">Hindi</a>.</p>
-<p>I build phone and web voice agents for other teams: answering calls, booking appointments, qualifying leads, screening candidates. I also build and tune agents on LiveKit and Retell (<a href="https://github.com/MakingMofongo/retell-intake-agent">a Retell example</a>), and the LLM backends behind them.</p>
+<p>Phone and web voice agents for other teams: reception, booking, lead qualifying, candidate screening. I build and tune agents on LiveKit and Retell (<a href="https://github.com/MakingMofongo/retell-intake-agent">a Retell example</a>), and the LLM backends behind them.</p>
 <p>Email <a href="mailto:rasheed@esa.bz">rasheed@esa.bz</a> or <a href="https://calendly.com/rasheed3086/30min">book 30 minutes</a>.</p>
 
 <h2>FlowForge <small>Feb 2025 to now</small></h2>
-<p>I built FlowForge, Realbotics' voice-agent platform (on contract since Feb 2025), and lead its team of four. It handles around 20k calls a day for LegalZoom, 1&#8209;800Accountant and others, and I built essentially all of <a href="https://app.realbotics.ai">app.realbotics.ai</a>. We run all of LiveKit ourselves (server, SIP, egress, TURN).</p>
+<p>I built FlowForge, Realbotics' voice-agent platform (on contract since Feb 2025), and lead its team of four. I built essentially all of <a href="https://app.realbotics.ai">app.realbotics.ai</a>. We run all of LiveKit ourselves (server, 4 SIP nodes, egress, TURN) on customer SIP trunks and Twilio, and it's load-tested at 1,000 concurrent calls.</p>
 <p>Most recently I built recruitment screener agents on it in 8 languages (English, Hindi, Hinglish, Tamil, Telugu, Kannada, Marathi, Bengali), and each one passes live-call checks with native-speaker audio.</p>
-<p>Some of what I did there:</p>
+<p>Some numbers from that work:</p>
 <ul>
 <li>Handing a caller from one agent to another mid call used to take 5.5 seconds, with the caller on the line the whole time. It's 31ms now.</li>
 <li>Voicemail detection was treating 3.7% of real people as voicemail. Tuned it against 13k+ real calls and it's at 1%.</li>
@@ -58,13 +57,13 @@ footer a{color:var(--ink)}
 <li>A worker used to hold about 6 calls at once, now it's about 31. That took four bottlenecks, one after the other, and cold start p95 went from 4.6s to 1.7s on the way.</li>
 <li>Under campaign load SIP calls would go from 20% failing to 100% failing in 8 minutes. Found why and fixed it.</li>
 <li>Prompt cache hit rate went from 68% to 98%.</li>
-<li>Also a test bench for agents, with simulated callers that have personas, each tool mocked, and LLM judges.</li>
+<li>I also built a test bench for agents: simulated callers with personas, every tool mocked, and LLM judges.</li>
 </ul>
 
 
 <h2>Open source</h2>
 <ul>
-<li><b>Oct 2026</b> · Four fixes merged into Mastra's realtime voice providers (OpenAI Realtime, Gemini Live, AWS Nova Sonic, Inworld), approved and merged by their CTO: <a href="https://github.com/mastra-ai/mastra/pull/26623">#26623</a>, <a href="https://github.com/mastra-ai/mastra/pull/26624">#26624</a>, <a href="https://github.com/mastra-ai/mastra/pull/26697">#26697</a>, <a href="https://github.com/mastra-ai/mastra/pull/26698">#26698</a>.</li>
+<li><b>Oct 2026</b> · Four fixes merged into Mastra's realtime voice providers (OpenAI Realtime, Gemini Live, AWS Nova Sonic, Inworld), approved and merged by Mastra's CTO: <a href="https://github.com/mastra-ai/mastra/pull/26623">#26623</a>, <a href="https://github.com/mastra-ai/mastra/pull/26624">#26624</a>, <a href="https://github.com/mastra-ai/mastra/pull/26697">#26697</a>, <a href="https://github.com/mastra-ai/mastra/pull/26698">#26698</a>.</li>
 </ul>
 
 <h2>Earlier work</h2>
@@ -73,7 +72,7 @@ footer a{color:var(--ink)}
 <li><b>2023</b> · ML contract at an insurtech. Got vehicle damage detection from 65% to 94% accuracy and shipped it as an API doing 100+ claims a day.</li>
 </ul>
 
-<footer><a href="mailto:rasheed@esa.bz">rasheed@esa.bz</a> · <a href="tel:+918639213518">+91&nbsp;86392&nbsp;13518</a> · <a href="https://github.com/MakingMofongo">GitHub</a> · <a href="https://www.linkedin.com/in/abdul-rasheed-esa-3a5635276/">LinkedIn</a> · <a href="work/">Work</a></footer>
+<footer><a href="mailto:rasheed@esa.bz">rasheed@esa.bz</a> · <a href="tel:+918639213518">+91&nbsp;86392&nbsp;13518</a> · <a href="https://github.com/MakingMofongo">GitHub</a> · <a href="https://www.linkedin.com/in/abdul-rasheed-esa-3a5635276/">LinkedIn</a> · <a href="work/">Other projects</a></footer>
 </main>
 </body>
 </html>
