@@ -39,11 +39,16 @@ footer a{color:var(--ink)}
 <body>
 <main>
 <h1>Abdul Rasheed Esa</h1>
-<p class="lede">I build phone agents that answer calls, book appointments and qualify leads. The platform I built, FlowForge, handles about 100k calls a day for LegalZoom, 1&#8209;800Accountant and others.</p>
-<p class="proof">Talk to one in your browser: <a href="https://app.realbotics.ai/app/talk-to?token=3xkgdvuw9bm6">English</a> or <a href="https://app.realbotics.ai/app/talk-to?token=nqhunbbhzcoq">Hindi</a>. Hyderabad, working US hours.</p>
+<p class="lede">I build voice agents for businesses that miss calls, for agencies to resell, and I fix latency for teams already on LiveKit or Retell. The platform I built, FlowForge, handles about 100k calls a day for LegalZoom, 1&#8209;800Accountant and others.</p>
+<p class="proof">Talk to one in your browser, a short screening call: <a href="https://app.realbotics.ai/app/talk-to?token=3xkgdvuw9bm6">English</a> or <a href="https://app.realbotics.ai/app/talk-to?token=nqhunbbhzcoq">Hindi</a>. Hyderabad, working US hours.</p>
 
 <h2>Work with me</h2>
-<p>Phone and web voice agents for other teams: reception, booking, lead qualifying, candidate screening. I build and tune agents on LiveKit and Retell (<a href="https://github.com/MakingMofongo/retell-intake-agent">a Retell example</a>), and the LLM backends behind them.</p>
+<p>I take client work alongside my Realbotics contract, kept separate from it, and I'm available full time during US business hours (ET).</p>
+<ul>
+<li><b>Businesses that miss calls</b> (plumbers, HVAC, clinics, law firms): when you're on a job or closed, an agent picks up, says up front it's an AI assistant, books the job into your calendar and texts you the details, or puts the caller through to you if they ask for a person. Paid pilot first: one agent on your real calls for two weeks, $1,500 fixed. After that a flat monthly fee covers hosting and changes, and you keep your number.</li>
+<li><b>Agencies</b>: I build voice agents you resell under your own name, on your accounts, on LiveKit Agents with Deepgram and ElevenLabs, or on Retell if you prefer. You own what I build for you, and it's handed over in your accounts: prompts, tool code and a test bench. I'll sign an NDA and never contact your clients. A typical agent takes 2 to 3 weeks and $3k to $6k fixed, or $60/h.</li>
+<li><b>Teams already on LiveKit or Retell</b> (<a href="https://github.com/MakingMofongo/retell-intake-agent">a Retell example</a>): latency and reliability work. On our production calls the agent typically starts speaking 700 to 800 ms after the caller stops. A one-week audit is $1,200 fixed: I go through your call traces, load-test to your target concurrency, and hand you a ranked fix list in five working days. Then $60/h for the fixes.</li>
+</ul>
 <p>Email <a href="mailto:rasheed@esa.bz">rasheed@esa.bz</a> or <a href="https://calendly.com/rasheed3086/30min">book 30 minutes</a>.</p>
 
 <h2>FlowForge <small>Feb 2025 to now</small></h2>
@@ -55,7 +60,7 @@ footer a{color:var(--ink)}
 <li>Voicemail detection was treating 3.7% of real people as voicemail. Tuned it against 13k+ real calls and it's at 1%.</li>
 <li>When we had issues with AWS, I moved production to Hetzner and had it running there in under 24 hours. Deploys are blue/green and drain live calls before anything goes down.</li>
 <li>A worker used to hold about 6 calls at once, now it's about 31. That took four bottlenecks, one after the other, and cold start p95 went from 4.6s to 1.7s on the way.</li>
-<li>Under campaign load SIP calls would go from 20% failing to 100% failing in 8 minutes. Found why and fixed it.</li>
+<li>Under campaign load SIP calls would go from 20% failing to 100% failing in 8 minutes. When a campaign was full, turned-away calls were never hung up, so each one held a line while it rang out, and those held lines got the next calls turned away too. Now a rejected call frees its line at once.</li>
 <li>Prompt cache hit rate went from 68% to 98%.</li>
 <li>I also built a test bench for agents: simulated callers with personas, every tool mocked, and LLM judges.</li>
 </ul>
